@@ -1,0 +1,43 @@
+// 定义项目 API 的 proto 文件
+// protobuf 文件参考:
+//  - https://developers.google.com/protocol-buffers/
+syntax = "proto3";
+
+package service.drivers.v1;
+option go_package = "./;drivers";
+
+enum DBDriverType {
+  unused = 0; // 占位不使用
+  mysql = 1; // MySQL
+  mongo = 2; // MONGODB
+  elasticsearch = 3; // ElasticSearch
+  redis = 4; // Redis
+  kingbase = 5; // Kingbase人大金仓
+  dm = 6; // 达梦
+  shentong = 7; // 神通
+  gbase = 8; // 南大通用
+  vastbase = 9; // 海量数据库
+  postgres = 10; // PostgreSQL
+  opengauss = 11; // 高斯
+  oceanbase = 12; // OceanBase
+  mssql = 13; // Microsoft SQL Server
+  oracle = 14; // Oracle
+  highgo = 15; // 瀚高数据库
+}
+
+enum OpAction {
+  unspecified = 0;
+  _lt = 1;
+  _lte = 2;
+  _eq = 3;
+  _not_eq = 4;
+  _gt = 5;
+  _gte = 6;
+  _limit = 7;
+  _order_by = 8;
+  _group_by = 9;
+  _having = 10;
+  _offset = 11;
+  _like = 12;
+  _not_like = 13;
+}
